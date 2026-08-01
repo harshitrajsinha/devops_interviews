@@ -47,7 +47,7 @@
 
 
 
----
+
 
 # Ans
 
@@ -69,7 +69,7 @@ My technical stack includes **AWS, Azure, Docker, Kubernetes, Terraform, Jenkins
 
 Overall, my role has been to automate secure deployments, improve developer experience through DevSecOps automation, and ensure applications are deployed securely while meeting compliance requirements.
 
----
+
 
 # Question 2
 
@@ -113,7 +113,7 @@ For CI/CD:
 
 This design provides high availability, scalability, security, and operational visibility while supporting production workloads.
 
----
+
 
 # Question 3
 
@@ -144,7 +144,7 @@ For Kubernetes, I would configure:
 
 This ensures the application automatically scales during traffic spikes and scales down during low utilization, optimizing both availability and infrastructure cost.
 
----
+
 
 # Question 4
 
@@ -164,7 +164,7 @@ Git Checkout → Secret Scan → SAST → SCA/SBOM → Build → Container Image
 
 Running SAST early allows developers to fix vulnerabilities before deployment, reducing remediation cost and improving overall software security.
 
----
+
 
 # Question 5
 
@@ -190,7 +190,7 @@ DAST can identify issues such as:
 
 In our pipeline, DAST runs after deployment to the test environment and before production release using tools like **OWASP ZAP**. This complements SAST because some runtime vulnerabilities cannot be detected through static code analysis alone.
 
----
+
 
 # Question 6
 
@@ -212,7 +212,7 @@ For application communication, we generally expose Pods using **Services** such 
 
 This architecture provides reliable service discovery while allowing fine-grained network security.
 
----
+
 
 # Question 7
 
@@ -246,7 +246,7 @@ Only images that pass the security policy are pushed to **Nexus** and deployed.
 
 This approach ensures vulnerable container images are blocked early in the deployment process.
 
----
+
 
 # Question 8
 
@@ -266,7 +266,7 @@ After successful validation, I commit the resolved changes and push them for rev
 
 In production environments, good branching strategies, frequent rebasing or merging, and smaller pull requests significantly reduce merge conflicts.
 
----
+
 
 # Question 9
 
@@ -288,7 +288,7 @@ git revert <commit-id>
 
 If the commit has **not** been shared with others, commands like **`git reset`** can be used, but for production or collaborative branches, **`git revert`** is the safer and industry-standard approach.
 
----
+
 
 # Question 10
 
@@ -317,4 +317,348 @@ Distributed tracing follows a request as it travels across multiple microservice
 
 In production, these three pillars work together. Metrics alert us that an issue exists, logs help determine what happened, and traces identify exactly where the request failed across distributed services. This combination enables faster troubleshooting and root cause analysis.
 
+
+## Question 11
+
+**Question:**
+
+Suppose your **Production** environment is down. Walk me through how you would handle the **first 15 minutes** of the incident.
+
+**Answer:**
+
+My first priority is **service restoration**, followed by root cause analysis.
+
+First, I would verify the scope of the incident—whether it affects all users or only specific services—and acknowledge the incident through the appropriate communication channel.
+
+Next, I would quickly determine whether the issue is related to the **application, infrastructure, Kubernetes, database, or network**.
+
+Based on the findings:
+
+* Check monitoring dashboards like **Prometheus** and **Grafana** for alerts.
+* Review application and infrastructure logs.
+* If it's Kubernetes, use commands like `kubectl get pods`, `kubectl describe pod`, and `kubectl logs`.
+* If it's infrastructure-related, verify VM or cloud resource health and check whether any recent infrastructure changes or Terraform drift occurred.
+* If a recent deployment caused the issue, consider a rollback to restore service quickly.
+
+Once the service is restored, I would perform a detailed **Root Cause Analysis (RCA)**, document the incident, identify preventive actions, and communicate updates to stakeholders throughout the process.
+
+The priority is always **Restore Service → RCA → Prevent Recurrence**.
+
+
+
+# Question 12
+
+**Question:**
+
+How do you enforce the **Principle of Least Privilege** using **IAM** in a **Cloud Environment** at scale?
+
+**Answer:**
+
+The Principle of Least Privilege means every user, application, or service should receive only the permissions required to perform its task—nothing more.
+
+At scale, I enforce this by:
+
+* Using **IAM Roles** instead of long-term user credentials wherever possible.
+* Implementing **Role-Based Access Control (RBAC)** so permissions are assigned based on job responsibilities.
+* Following a **default deny** approach and granting only the minimum required permissions.
+* Using temporary credentials through role assumption instead of permanent access keys.
+* Regularly reviewing and removing unused or excessive permissions.
+* Granting elevated privileges only for a limited duration and revoking them immediately after the activity is completed.
+* Storing permissions as code wherever possible for better auditing and consistency.
+
+This approach minimizes the attack surface while maintaining operational efficiency.
+
+
+
+# Question 13
+
+**Question:**
+
+How would you securely manage **Secrets** and **Credentials** used by **CI/CD Pipelines** to access **Cloud Resources**?
+
+**Answer:**
+
+Sensitive credentials should never be hardcoded in source code or pipeline scripts.
+
+In our environment, we use **Jenkins Credentials** for securely storing pipeline secrets and **HashiCorp Vault** for centralized secret management. Cloud-native secret managers like **AWS Secrets Manager** or **Azure Key Vault** are also excellent options.
+
+The pipeline retrieves secrets dynamically during execution rather than storing them in the repository.
+
+Some security best practices include:
+
+* Encrypt secrets at rest.
+* Rotate credentials regularly.
+* Use IAM Roles instead of static access keys wherever possible.
+* Restrict access using least privilege.
+* Mask secrets in pipeline logs.
+* Audit secret access through logging.
+
+This ensures credentials remain secure while allowing automated deployments.
+
+
+
+# Question 14
+
+**Question:**
+
+How do you tune a **SAST Tool** to reduce **False Positives** without missing real vulnerabilities? Also explain how you handle **Suppressions**.
+
+**Answer:**
+
+Fine-tuning a SAST tool starts with aligning its policies to the organization's security and compliance requirements.
+
+For example, in our project, we prioritize rules relevant to **PCI-DSS** and **OWASP Top 10**, rather than enabling every available rule.
+
+To reduce false positives:
+
+* Enable only relevant rule sets.
+* Customize severity thresholds.
+* Update scan configurations based on application technology.
+* Validate findings before marking them as false positives.
+
+When a finding is confirmed as a false positive, we suppress it with proper justification and maintain suppression records in the security platform. These suppressions are reused in future scans so the same false positives do not repeatedly appear.
+
+However, suppressions are periodically reviewed to ensure genuine vulnerabilities are not accidentally ignored.
+
+This balances security effectiveness with developer productivity.
+
+
+
+# Question 15
+
+**Question:**
+
+Compare **SonarQube**, **Checkmarx**, and **Semgrep**. Explain their differences, strengths, limitations, and use cases.
+
+**Answer:**
+
+These tools have different strengths.
+
+**SonarQube**
+
+* Focuses on **code quality** and basic security analysis.
+* Detects bugs, vulnerabilities, and code smells.
+* Integrates easily with CI/CD pipelines.
+* Available in both Community and Enterprise editions.
+* Best suited for continuous code quality monitoring.
+
+**Checkmarx**
+
+* Enterprise-grade **SAST** solution.
+* Performs deeper security analysis than SonarQube.
+* Supports compliance reporting, governance, and advanced vulnerability management.
+* Commonly used in organizations with strict security requirements.
+
+**Semgrep**
+
+* Lightweight and fast static analysis tool.
+* Uses customizable rules.
+* Easy to integrate into CI/CD.
+* Excellent for custom security policies and developer workflows.
+
+In practice:
+
+* **SonarQube** is ideal for improving overall code quality.
+* **Checkmarx** is preferred for enterprise security scanning and compliance.
+* **Semgrep** is useful for fast scans and organization-specific security rules.
+
+The choice depends on the organization's security maturity, compliance needs, and budget.
+
+
+
+# Question 16
+
+**Question:**
+
+What are the **limitations of DAST**, and how do you compensate for those limitations?
+
+**Answer:**
+
+DAST is effective for identifying runtime vulnerabilities, but it has several limitations.
+
+Some common limitations are:
+
+* It requires a running application.
+* It cannot analyze source code.
+* It may miss vulnerabilities hidden behind complex authentication or business workflows.
+* It provides limited visibility into the exact vulnerable code.
+* Scans may take longer than static analysis.
+
+To compensate for these limitations, we combine DAST with other security practices:
+
+* **SAST** for source code analysis.
+* **SCA** for third-party dependency vulnerabilities.
+* **Container Image Scanning** for container security.
+* **Secret Scanning** for exposed credentials.
+* Manual security reviews and penetration testing for complex scenarios.
+
+Using multiple security controls provides comprehensive coverage throughout the SDLC.
+
+
+
+# Question 17
+
+**Question:**
+
+Walk me through your **End-to-End Vulnerability Management Lifecycle**. Also explain your **role and responsibilities** throughout the process.
+
+**Answer:**
+
+Our vulnerability management process starts with integrating security scanners into the CI/CD pipeline.
+
+The lifecycle is:
+
+**Identify → Assess → Prioritize → Remediate → Validate → Report → Continuous Monitoring**
+
+Different scanners identify different vulnerability types:
+
+* SAST for source code.
+* SCA for third-party dependencies.
+* Container scanners for Docker images.
+* DAST for runtime vulnerabilities.
+
+My responsibilities include:
+
+* Integrating scanners into Jenkins pipelines.
+* Supporting development teams in understanding findings.
+* Providing evidence for reported vulnerabilities.
+* Assisting with remediation recommendations.
+* Handling false-positive validation where applicable.
+* Re-running scans after fixes.
+* Supporting compliance activities such as PCI-DSS by generating security reports and evidence.
+
+For image-related vulnerabilities, I help update vulnerable base images or dependencies. For SCA findings, I assist teams in identifying where vulnerable libraries are being used so they can upgrade or replace them.
+
+
+
+# Question 18
+
+**Question:**
+
+How would you secure a **Kubernetes Cluster** against common **Attack Vectors**?
+
+**Answer:**
+
+Securing Kubernetes requires multiple layers of protection.
+
+Some key security controls include:
+
+* Implement **RBAC** with least privilege.
+* Enforce **Network Policies** to restrict Pod-to-Pod communication.
+* Use **Namespaces** for workload isolation.
+* Store secrets securely using Kubernetes Secrets integrated with external secret managers where possible.
+* Scan container images before deployment.
+* Avoid running containers as the **root user**.
+* Use trusted and signed container images.
+* Keep Kubernetes and worker nodes regularly patched.
+* Enable audit logging and continuous monitoring.
+* Restrict API Server access and use strong authentication mechanisms.
+
+These controls significantly reduce the attack surface while maintaining operational flexibility.
+
+
+
+# Question 19
+
+**Question:**
+
+What are the **Image Security Best Practices** you enforce for **Docker/Container Images**?
+
+**Answer:**
+
+Some important image security best practices are:
+
+* Use **minimal and trusted base images**.
+* Pin image versions instead of using the `latest` tag.
+* Run containers as a **non-root user**.
+* Remove unnecessary packages and dependencies.
+* Scan images using tools like **Trivy** before pushing them to the registry.
+* Block deployment if High or Critical vulnerabilities exceed the defined threshold.
+* Sign container images to ensure integrity.
+* Store images only in trusted registries such as Nexus.
+* Regularly rebuild images to include security patches.
+* Avoid embedding secrets inside images.
+* Follow multi-stage builds to reduce image size and attack surface.
+
+These practices help produce secure, lightweight, and maintainable container images.
+
+
+
+# Question 20
+
+**Question:**
+
+What is **Terraform State Drift**?
+
+**Answer:**
+
+Terraform State Drift occurs when the actual infrastructure no longer matches the infrastructure recorded in the Terraform state file.
+
+This usually happens when someone manually modifies cloud resources outside Terraform, such as through the AWS or Azure console.
+
+For example, if an EC2 instance type is changed manually in AWS, Terraform's state file will still contain the previous configuration. During the next `terraform plan`, Terraform detects this difference and reports the drift.
+
+State drift can lead to unexpected infrastructure changes, so all infrastructure modifications should ideally be performed through Terraform.
+
+## Question 21
+
+**Question:**
+
+How do you **detect**, **prevent**, and **fix Terraform State Drift**?
+
+**Answer:**
+
+Terraform state drift is detected by regularly running **`terraform plan`**, which compares the actual infrastructure with the Terraform state file and highlights any differences. Periodic drift detection can also be automated through CI/CD pipelines.
+
+To **prevent** state drift, I follow these best practices:
+
+* Store the Terraform state in a **remote backend** such as an S3 bucket with proper access control.
+* Enable **state locking** (for example, using DynamoDB with an S3 backend) to prevent multiple users from modifying the state simultaneously.
+* Restrict direct access to cloud resources using **IAM** and **RBAC**, so infrastructure changes are made only through Terraform.
+* Follow Infrastructure as Code practices and avoid manual changes from the cloud console.
+* Use code reviews and CI/CD pipelines for infrastructure changes.
+
+To **fix** state drift:
+
+* Run **`terraform plan`** to identify the drift.
+* If the manual change is valid, update the Terraform code to match the actual infrastructure and apply it.
+* If the manual change is unauthorized, run **`terraform apply`** to restore the infrastructure to the desired state.
+* In specific cases where resources already exist but are not tracked, use **`terraform import`** to bring them under Terraform management.
+
+This approach keeps the infrastructure consistent, auditable, and manageable.
+
+
+
+# Question 22
+
+**Question:**
+
+How would you design **DDoS Protection** for a **Public-facing API** across **Layer 3 (L3)**, **Layer 4 (L4)**, and **Layer 7 (L7)**?
+
+**Answer:**
+
+DDoS protection should follow a **defense-in-depth** approach by securing the application across multiple network layers.
+
+### **Layer 3 & Layer 4 (Network and Transport Layer)**
+
+At these layers, the goal is to absorb or block large volumes of malicious traffic.
+
+* Use cloud-native DDoS protection services such as **AWS Shield** or equivalent cloud services.
+* Deploy **Load Balancers** to distribute incoming traffic.
+* Enable **Auto Scaling** so the application can handle legitimate traffic spikes.
+* Apply **Security Groups**, **Network ACLs**, and firewall rules to restrict unnecessary traffic.
+* Continuously monitor traffic patterns using **CloudWatch**, **Prometheus**, or similar monitoring tools.
+
+### **Layer 7 (Application Layer)**
+
+At the application layer, the focus is on protecting APIs from malicious requests.
+
+* Place the API behind an **API Gateway** or **Application Load Balancer**.
+* Configure **Rate Limiting** and **Request Throttling** to limit requests from individual clients.
+* Use a **Web Application Firewall (WAF)** to block malicious requests such as SQL Injection, XSS, bot traffic, and known attack signatures.
+* Maintain **IP allowlists/blocklists** where appropriate.
+* Validate authentication and authorization before processing requests.
+* Configure logging, monitoring, and alerts for abnormal traffic patterns.
+
+In production, these controls work together. Network-level protection mitigates volumetric attacks, while application-level controls prevent abuse of API endpoints. This layered approach provides resilient and secure protection for public-facing APIs.
 
