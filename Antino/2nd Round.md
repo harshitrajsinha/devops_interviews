@@ -1,7 +1,6 @@
 # Int Que
 
 
-
 ---
 
 # Ans
