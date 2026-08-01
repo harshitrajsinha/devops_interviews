@@ -59,9 +59,9 @@ Introduce yourself.
 
 **Answer:**
 
-Sure. I'm a **DevSecOps Engineer with around 4+ years of experience** in building secure CI/CD pipelines, cloud infrastructure, and DevSecOps automation.
+Sure. I'm a **DevSecOps Engineer with around 4.5 years of experience** in building secure CI/CD pipelines, cloud infrastructure, and DevSecOps automation.
 
-I started my career as a **DevOps Engineer at TCS**, where I primarily worked on CI/CD pipeline development, AWS infrastructure, deployment automation, and operational support. Later, I transitioned into a **DevSecOps Engineer** role, where my focus shifted towards integrating security throughout the Software Development Lifecycle.
+I started my career as a **DevOps Engineer at PREVIOUS COMPANY**, where I primarily worked on CI/CD pipeline development, AWS infrastructure, deployment automation, and operational support. Later, I transitioned into a **DevSecOps Engineer** role, where my focus shifted towards integrating security throughout the Software Development Lifecycle.
 
 In my recent project for a **FinTech client**, I was responsible for implementing DevSecOps practices to support **PCI-DSS compliance**. I worked on integrating **SAST, SCA, SBOM, Secret Scanning, Container Image Scanning, and DAST** into Jenkins-based CI/CD pipelines. We also used **GitLab CI** and **Azure DevOps** for specific workloads.
 
