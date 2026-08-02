@@ -1,8 +1,8 @@
-# Interview questions 
+# Int que
 
 
 
 ---
 
-# Answers
+# Ans
 
