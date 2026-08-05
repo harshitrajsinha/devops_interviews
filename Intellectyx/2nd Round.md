@@ -1,4 +1,4 @@
-## Interview Questions: 2nd Round
+## Interview Questions: 2nd Round 
 
 1. Could you please walk me through your resume and overall experience?
 2. Explain your end-to-end Jenkins CI/CD pipeline, including where each security scan runs and which scans block the build.
