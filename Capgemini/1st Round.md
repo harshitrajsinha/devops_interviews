@@ -1,4 +1,4 @@
-# Interview Questions: 1st Round
+# Interview Questions : 1st Round
 
 1. Can you tell me about yourself?
 2. How many years of experience do you have?
