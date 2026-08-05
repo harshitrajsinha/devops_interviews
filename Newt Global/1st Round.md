@@ -54,7 +54,7 @@
 
 Sure.
 
-My name is **Yuvaraju Sai Kumar**, and I have around **4.5 years of experience** in **DevOps and DevSecOps**.
+  My name is **NAME**, and I have around **4.5 years of experience** in **DevOps and DevSecOps**.
 
 I started my career as a **DevOps Engineer at PREVIOUS COMPANY**, where I worked on CI/CD automation, infrastructure provisioning, containerization, and cloud deployments. Later, I transitioned into a **DevSecOps Engineer** role at PRESENT COMPANY, supporting a **FinTech client** that provides payment gateway solutions for banking applications.
 
