@@ -64,7 +64,7 @@
 
 > **I have around 4.5 years of experience in DevOps and DevSecOps.**
 >
-> I started my career at **TCS**, where I worked primarily on **Jenkins, CI/CD pipeline management, and application deployments**. After around 2.5 years, I transitioned into a **DevSecOps Engineer** role.
+> I started my career at **PREVIOUS COMPANY**, where I worked primarily on **Jenkins, CI/CD pipeline management, and application deployments**. After around 2.5 years, I transitioned into a **DevSecOps Engineer** role.
 >
 > Currently, I work with **COMPANAY NAME**, deployed to **CLIENT NAME**, a fintech company providing payment gateway solutions for banking clients.
 >
@@ -476,10 +476,6 @@ This reduces blast radius, improves scalability, and allows independent updates.
 
 
 
-Great. Below are the **improved interview-ready answers** for **Questions 11–20**, based on your actual project experience, while correcting and enhancing the responses from your interview.
-
-
-
 # 11. Can you explain the different security tools you have used in your CI/CD pipelines?
 
 In our project, we implemented a **Shift-Left DevSecOps** approach by integrating multiple security tools into the Jenkins CI/CD pipeline.
@@ -806,12 +802,6 @@ In my current project, we work in a **Hybrid Cloud Architecture**, where some se
 * Azure Monitor (where applicable)
 
 **This architecture allowed us to leverage cloud scalability while keeping sensitive systems and enterprise services on-premises to satisfy security and regulatory requirements.**
-
-
-
-
-> **Note:** In the previous list, **Question 20** was "Hybrid Architecture." So below I've continued from **Question 21 to Question 25**.
-
 
 
 # 21. Prometheus is alerting on high memory usage on a node. How do you triage it?
