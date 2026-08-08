@@ -360,7 +360,7 @@ These automations reduced manual intervention, improved consistency, and made de
 
 ### **Answer:**
 
-My current project is for a **FinTech client (In-Solutions Global)** that provides **payment gateway solutions** to banking and financial institutions.
+My current project is for a **FinTech client** that provides **payment gateway solutions** to banking and financial institutions.
 
 The platform enables banks and financial organizations to securely process **card transactions, payment authorizations, prepaid card services, and other payment-related operations** through web and mobile applications.
 
