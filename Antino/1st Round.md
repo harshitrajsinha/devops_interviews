@@ -1,4 +1,4 @@
-# Int Que
+# Interview Questions
 
 1. Introduce yourself.
 
