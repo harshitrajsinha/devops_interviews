@@ -1,6 +1,7 @@
-Note: Interview was not recorded because attended interview in my from office laptop
+Note: I don't have this interview exact questions as this Interview was not recorded because i attended interview in from office laptop.
 
-## Areas: Interviewer focused
+## Areas Covered in Interview:
+
 1. Kubernetes
 2. Deployments
 3. Docker
