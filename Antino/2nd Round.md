@@ -1,5 +1,3 @@
-# Interview Questions
-
 Note: Interview was not recorded because attended interview in my from office laptop
 
 ## Areas: Interviewer focused
