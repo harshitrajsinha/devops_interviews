@@ -12,3 +12,6 @@ Note: Interview was not recorded because attended interview in my from office la
 9. Networking
 10. Trivy
 11. Supply chain attack
+12. Network Troubleshooting
+13. Kubernetes Troubleshooting
+14. 
