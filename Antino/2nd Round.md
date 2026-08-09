@@ -15,4 +15,3 @@ Note: I don't have this interview exact questions as this Interview was not reco
 11. Supply chain attack
 12. Network Troubleshooting
 13. Kubernetes Troubleshooting
-14. 
