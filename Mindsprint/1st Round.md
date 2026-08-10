@@ -1,4 +1,4 @@
-# Int Que
+# Interview Questions 
 
 1. **Introduce yourself** and explain your current **roles and responsibilities** in your project.
 
