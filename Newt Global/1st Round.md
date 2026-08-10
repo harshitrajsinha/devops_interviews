@@ -1,4 +1,4 @@
-# Int Que
+# Interview Questions 
 
 1. **Introduce yourself** and briefly explain your **profile** and **experience**.
 
@@ -40,7 +40,7 @@
 
 ---
 
-# Ans
+# Answers
 
 
 
