@@ -1,6 +1,9 @@
 ## Role: IaC & automation, Nutanix
 
 
+
+---
+
 Sequence of events :
 
 18/07/2026 Technical interview 
