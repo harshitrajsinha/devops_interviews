@@ -16,3 +16,6 @@ Sequence of events :
 
 13/08/2026 Mail asking for documents & DEV DegiVerifier mail
 
+14/08/2026 
+
+14/08/2026 Live Bank Statement Verification Call
