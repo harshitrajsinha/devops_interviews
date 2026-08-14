@@ -14,8 +14,11 @@ Sequence of events :
 
 12/08/2026 HR SPOC Shivam CALL Said today or tomorrow you will receive mails respond and Offer is yet subjected to internal approvals
 
+13/08/2026 Intimation mail || Digital Employment Verificatio
+
 13/08/2026 Mail asking for documents & DEV DegiVerifier mail
 
-14/08/2026 
+14/08/2026 Mail asking for documents Offer letter & Payslips
 
 14/08/2026 Live Bank Statement Verification Call
+
