@@ -20,5 +20,9 @@ Sequence of events :
 
 14/08/2026 Mail asking for documents Offer letter & Payslips
 
+14/08/2026 I called HR SPOC and mailed regarding Job Description and Offer letter rollout duration, he said mostly next week will release offer and cant be extended till next month
+
 14/08/2026 Live Bank Statement Verification Call
+
+
 
