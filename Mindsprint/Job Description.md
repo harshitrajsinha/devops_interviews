@@ -1,5 +1,4 @@
 # Role: DevSecOps Engineer
-
 ## About the role
 
 We are looking for a **DevSecOps Engineer** having **4+ years of experience** to build and run secure, automated delivery pipelines across a multi-cloud environment. You will own CI/CD, Kubernetes deployments, and cloud infrastructure across AWS and Azure, while embedding security into every stage of the delivery process rather than treating it as a final check.
