@@ -1,5 +1,6 @@
 # Interview Questions 
 
+
 1. **Introduce yourself** and explain your current **roles and responsibilities** in your project.
 
 2. Can you explain the complete **deployment flow** from **developer commit** until **production deployment**? Also, draw a simple **CI/CD pipeline architecture** and explain all the stages involved.
