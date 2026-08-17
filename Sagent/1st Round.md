@@ -38,8 +38,6 @@
 
 19. **Do you have any questions for us?**
 
-
-
 ### Main technical topics covered
 
 * Terraform modules
