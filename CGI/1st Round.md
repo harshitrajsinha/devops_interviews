@@ -109,7 +109,9 @@
 21. What is threat modeling? 
 22. Which threat-modeling frameworks have you used? 
 23. Which Python libraries have you used? 
-How would you handle false positives from a security scanner? (suggested preparation topic for the next round)
+    How would you handle false positives from a security scanner? (suggested preparation topic for the next round)
+
+---
 
 ## Answers: 
 
