@@ -59,7 +59,6 @@
 
 
 
-
 # 1. Tell me about yourself.
 
 > **I have around 4.5 years of experience in DevOps and DevSecOps.**
