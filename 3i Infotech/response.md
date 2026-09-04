@@ -16,3 +16,13 @@
 - In case I would be performing manual deployment on multiple node, I would have a script that would perform deployment in rolling update fashion so that not all the nodes stop at once but rather one or a small group of nodes are first updated and once their health checks would pass, the next batch would then update.
  
 <hr/>
+
+### 3. Security scanning in pipeline
+- I use different types of security scanning tools at different stages of pipeline. The goal is always to catch any vulnerability as soon as possible, adhering to "Shift Left" principle.
+- The first type of security tool I use is "Static Code Analysis" that would detect any code related issues and vulnerabilities without running the the code. We could use tools like Gitleaks for secret scanning, OWASP dependency check or npm audit if it is a nodejs project in order to detect any package vulnerability. For code related issues to find out if there is possibility of SQL injection or insecure API we could use SonarQube.
+- We may not use all the tools in same pipeline and rather be selective based on what depth the tool covers. For example, we should use tools that would perform basic checks to get faster CI pipeline in short-lived branches like feature and more detailed analysis in test and prod branch.
+- We should also use security plugins and extensions in developer's IDE to catch it early. For example, a secret is leaked and committed, even if it gets caught by CI pipeline during pull request, it would be in commit history which then needs to be removed separately. This is where developer's IDE plugin and extensions could save us. Tool like "precommit" could be used.
+- Next category of security scanning tool I use is "Dynamic Application Security Testing" that detects similar vulnerability like Static Code Analysis but at runtime. A tool that we can use here is OWASP ZAP.
+- Once the container image is built, it is required to scan the image as well. For this I generally use Docker scout in development and Trivy Image scan in production is it gives more detailed report.
+- It is also preferred to use SBOM to list all the packages that are going to be shipped in production and store it somewhere so that if any vulnerability is reported in community, we could check if our application is using that package or not.
+- Finally, all the vulnerabilities that are generated, based on the severity level, we could fail the pipeline and report to the respective developer either through some external services like Slack or Gmail or maybe raise a ticket or comment on the the pull request that triggered the pipeline.
