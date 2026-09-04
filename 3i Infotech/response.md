@@ -26,3 +26,15 @@
 - Once the container image is built, it is required to scan the image as well. For this I generally use Docker scout in development and Trivy Image scan in production is it gives more detailed report.
 - It is also preferred to use SBOM to list all the packages that are going to be shipped in production and store it somewhere so that if any vulnerability is reported in community, we could check if our application is using that package or not.
 - Finally, all the vulnerabilities that are generated, based on the severity level, we could fail the pipeline and report to the respective developer either through some external services like Slack or Gmail or maybe raise a ticket or comment on the the pull request that triggered the pipeline.
+
+<hr />
+
+- TAR file can be loaded using `docker load -i <tar-file.tar>`
+- Kubernetes `cordon` command marks a node as Unschedulable. New pods won't start on it, but existing pods keep running. Used for maintenance.
+```bash
+| Command            | What it does                                                   |
+| ------------------ | -------------------------------------------------------------- |
+| `kubectl cordon`   | Stops **new Pods** from being scheduled                        |
+| `kubectl drain`    | Evicts **existing Pods** and also makes the node unschedulable |
+| `kubectl uncordon` | Allows Pods to be scheduled on the node again                  |
+```
