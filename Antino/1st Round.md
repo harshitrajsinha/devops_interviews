@@ -45,9 +45,7 @@
 22. How would you design **DDoS Protection** for a **Public-facing API** across **Layer 3 (L3)**, **Layer 4 (L4)**, and **Layer 7 (L7)**?
 
 
-
 ---
-
 
 # Answers
 
