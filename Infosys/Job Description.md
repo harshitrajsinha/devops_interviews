@@ -1,8 +1,10 @@
 ## Role: IaC & automation, Nutanix
 
-I guess this is JD:
+I guess this is JD: https://career.infosys.com/jobdesc?jobReferenceCode=INFSYS-EXTERNAL-247626&sourceId=1
 
-https://career.infosys.com/jobdesc?jobReferenceCode=INFSYS-EXTERNAL-247626&sourceId=1
+I also see similar JD: https://www.jobted.in/job/b43eff4baf1a50c8508ac0acdffc21c3
+
+---
 
 # HYDERABAD, Infosys Limited — IaC & Automation, Nutanix
 
