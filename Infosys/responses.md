@@ -17,3 +17,48 @@
 
 ### 9. Terraform drift
 [Terraform Drift - Notion](https://app.notion.com/p/Terraform-2f431f57f13e8065984cf372a36f06a0?source=copy_link#35d31f57f13e8070b853d271b081a2e1)
+
+### 11. Terraform Modules
+[Terraform Modules - Notion](https://app.notion.com/p/Terraform-2f431f57f13e8065984cf372a36f06a0?source=copy_link#33831f57f13e80d7bdd8f12329724cb5)
+
+### 12. Secure secrets in Terraform
+* Avoid hardcoding or storing any sensitive value in terraform code files.
+* Use secret management tools like HashiCorp Vault, AWS Secret Manager
+* If we have to pass any sensitive value via variables then we should mark that variable as sensitive to avoid output of its value.
+* Since state files do not mask the values, we should store state files in a remote backend and apply least privilege policy to avoid any unauthorized access.
+
+### 13. Terraform architecture and internal working of Terraform
+* Terraform follows a declarative approach where developers define the desired state in terraform code file written in HCL (HashiCorp Corporation Language), which terraform uses to perform actions.
+* The different components involved are -
+1. Terraform configuration file - which has `.tf` as extension and contains the desired state of infrastructure.
+2. Terraform core - which is the terraform engine that reads configuration code, loads variables, compares desired and current state, create execution plan, communicate to platform to create resources and maintains the lifecycle of resources.
+3. Terraform backend - which is used to store terraform state file remotely.
+4. Terraform state file - which maintains the current state of infrastructure.
+5. Providers - which are plugins through which terraform communicates to platforms like AWS or GitHub to create resources.
+6. Dependency graph - which terraform uses to determine the order in which resources should be created, modified, or destroyed
+   
+* Internal Working of Terraform
+```
+1. Read configuration
+          │
+          ▼
+2. Initialize providers
+          │
+          ▼
+3. Read desired state
+          │
+          ▼
+4. Compare desired vs current state
+          │
+          ▼
+5. Build dependency graph
+          │
+          ▼
+6. Generate execution plan
+          │
+          ▼
+7. Execute changes
+          │
+          ▼
+8. Update state file
+```
