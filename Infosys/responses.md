@@ -74,3 +74,27 @@
 
 ### 20. Kubelet in Kubernetes
 * Kubelet is a Kubernetes resource that runs on every worker node and it communicates with API server in control plane to ensure the desired no. of pods are running in the node, it informs about the health status of the node to the API server. It also communicates with Container Runtime Interface (CRI) to maintain the lifecycle of containers running in the pod.
+
+### 22. Kublet vs CRI responsibility in CrashLoopBackOff
+* When a container in a Pod repeatedly fails, the kubelet is responsible for taking the decision to restart the container, while the container runtime actually performs the restart.
+```
+Container crashes
+      ↓
+Container runtime detects container exit
+      ↓
+Kubelet observes the container state
+      ↓
+Kubelet sees that the Pod's restartPolicy requires restart
+      ↓
+Kubelet asks CRI to restart/recreate the container
+      ↓    
+Starts the container again
+      ↓
+Container crashes again
+      ↓
+...
+      ↓
+Kubelet applies increasing restart backoff
+      ↓
+Pod shows CrashLoopBackOff
+```
