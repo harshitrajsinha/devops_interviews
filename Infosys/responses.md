@@ -98,3 +98,9 @@ Kubelet applies increasing restart backoff
       ↓
 Pod shows CrashLoopBackOff
 ```
+
+### 38. Rollback strategy
+First, I would stop the deployment to prevent further blast radius. I'd then identify the affected servers and immediately switch back to the last stable version. The goal should be to first bring service availability and then do the analysis. Rather than blindly rolling back all 50 servers simultaneously, I'd do it in controlled batches. We could rollback of 5 servers then 10 servers and if they are healthy then we could attempt on rest of the server at once. This is to ensure that the failure occurred due to issue in latest version of application and not because of any network failure or third-party dependency failure, otherwise even the previous stable version would fail. Once the service is stable, I'd verify the entire fleet and then investigate the root cause. 
+
+### 39. Git vs GitHub
+[Git vs GitHub](https://github.com/harshitrajsinha/devops_interviews/blob/main/Infosys/1st%20Round.md#39-what-is-the-difference-between-git-and-github)
