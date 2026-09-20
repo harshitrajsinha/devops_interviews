@@ -62,3 +62,15 @@
           ▼
 8. Update state file
 ```
+
+### 15. Terraform data source
+[Terraform data source - Notion](https://app.notion.com/p/Terraform-2f431f57f13e8065984cf372a36f06a0?source=copy_link#33d31f57f13e8085b994f04ff54c2d35)
+
+### 17. Blue-Green Deployment strategy
+[Blue-Green Deployment - Notion](https://app.notion.com/p/DevOps-2c431f57f13e8008a84bfe91f22a77ab?source=copy_link#38c31f57f13e80a1aad8f25831a5140d)
+
+### 19. Pods, Deployment, Service
+[Pods, Deployment, Service](https://app.notion.com/p/Interview-3b531f57f13e802d9e37e368b0fcd02b?source=copy_link#3b531f57f13e800b956df3c40811177a)
+
+### 20. Kubelet in Kubernetes
+* Kubelet is a Kubernetes resource that runs on every worker node and it communicates with API server in control plane to ensure the desired no. of pods are running in the node, it informs about the health status of the node to the API server. It also communicates with Container Runtime Interface (CRI) to maintain the lifecycle of containers running in the pod.
