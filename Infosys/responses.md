@@ -13,7 +13,7 @@
 
 ### 8. Terraform state file
 [Terraform state file - Notion](https://app.notion.com/p/Terraform-2f431f57f13e8065984cf372a36f06a0?source=copy_link#33d31f57f13e80639177f1243e1008c6)
-* It is important because Terraform uses the state file to: - track and maintain consistency between desired and existing resources, identify what changes need to be applied, and detect infrastructure drift.
+* It is important because Terraform uses the state file to: - track current state of infrastructure, provide resource identity of the resources Terraform is maintaining on the platform from a number of similar resources, and detect infrastructure drift.
 
 ### 9. Terraform drift
 [Terraform Drift - Notion](https://app.notion.com/p/Terraform-2f431f57f13e8065984cf372a36f06a0?source=copy_link#35d31f57f13e8070b853d271b081a2e1)
