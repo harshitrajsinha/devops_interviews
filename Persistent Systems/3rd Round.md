@@ -1,4 +1,4 @@
-## Questions:  Clinet 1st Round | Client name: Thermo Fisher
+## Interview Questions:  Client 1st Round | Client name: Thermo Fisher
 
 1. Can you introduce yourself?
 2. Can you explain your day-to-day activities in your current role?
