@@ -1,4 +1,4 @@
-## Questions: Client 2nd Round | Client Name: Thermo Fisher
+## Interview Questions: Client 2nd Round | Client Name: Thermo Fisher
 
 1. Have you designed an end-to-end CI/CD pipeline using Jenkins?
 2. Can you briefly explain your approach to designing the CI/CD pipeline?
