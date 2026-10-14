@@ -13,3 +13,7 @@
 11. You mentioned a separate vulnerability management team. Do you know what exactly they do?
 12. How comfortable are you relocating to Bangalore?
 13. Do you have any questions for me?
+
+
+# Answers:
+
