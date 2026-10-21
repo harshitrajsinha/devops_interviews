@@ -630,6 +630,134 @@ I would like to understand a few aspects of the role to see how I can contribute
 4. Scale and coverage: Approximately how many applications and development teams are supported by the centralized DevSecOps function?
 5. Success criteria: What are the key expectations for the person joining this role during the first three to six months?
 
+## Question 21: Are you primarily focused on cloud or DevSecOps, and did you begin your career in core DevOps or DevSecOps?
+
+I started my career in core DevOps, working on CI/CD pipelines, deployments, and infrastructure automation. Later, I moved more toward DevSecOps, focusing on integrating security into the software development lifecycle.
+
+In my current ISG project, my primary focus is DevSecOps and application security tooling. I work with CI/CD pipelines, SAST, DAST, SCA, SBOM generation, container scanning, and vulnerability management. From the cloud perspective, I mainly work with AWS, along with hybrid cloud and on-premises environments.
+
+## Question 22: Can you explain a real project where you implemented vulnerability management and DevSecOps practices?
+
+In my current ISG project, we support fintech and payment gateway applications that serve multiple banking clients. Security and compliance are important because of the nature of the applications.
+
+Our DevSecOps team integrates security tools into CI/CD pipelines using Jenkins, GitLab, and shared pipeline libraries. We use Fortify for SAST and DAST, Sonatype Lifecycle for SCA, Trivy for container scanning, and secret-detection tools such as GitLeaks.
+
+When scans identify vulnerabilities, we review the findings, validate their severity and applicability, identify the affected application or dependency, and coordinate with the responsible development team for remediation. After fixes are implemented, we trigger rescans to verify the results.
+
+Our objective is to identify vulnerabilities early, reduce security risks, and maintain security and compliance across application releases.
+
+## Question 23: Who performs vulnerability triage, and which SAST, DAST, SCA, container-scanning, and secret-detection tools have you used?
+
+Vulnerability triage is generally a collaborative process involving the DevSecOps team, application security team, and application development teams.
+
+My role involves reviewing scan results, validating findings, understanding severity and applicability, identifying the affected application or dependency, and coordinating with the responsible team for remediation.
+
+The tools I have worked with include:
+
+- SAST: Fortify Static Code Analyzer.
+- DAST: Fortify WebInspect and OWASP ZAP.
+- SCA: Sonatype Lifecycle and OWASP Dependency-Check.
+- Container scanning: Trivy.
+- Secret detection: GitLeaks and GitGuardian.
+- Code quality and additional security checks: SonarQube and Snyk.
+
+The exact tools used depend on the application, pipeline, and security requirements.
+
+## Question 24: Have you worked only on security-tool configuration, or have you also handled installation, maintenance, monitoring, upgrades, integrations, and console administration?
+
+My experience includes both security-tool integration and operational support.
+
+I have worked on integrating security tools with Jenkins and GitLab pipelines, configuring scan stages, managing scan parameters, reviewing results, troubleshooting pipeline and tool-related issues, and supporting reporting and remediation workflows.
+
+I also work with security-tool consoles to review findings, manage scan-related configurations, and support teams using the tools.
+
+For installation and upgrades, my involvement depends on the tool and project responsibility. In some cases, the central platform or vendor team handles the underlying installation, while our team supports integration, configuration, validation, and troubleshooting.
+
+My main responsibility is to ensure that security tools are properly integrated, operational, and producing useful results within the SDLC.
+
+## Question 25: How do you reduce false positives and determine whether a security finding is a true positive or a false positive?
+
+I follow a structured validation process.
+
+1. Review the finding: Understand the vulnerability description, severity, affected file or component, and supporting evidence.
+2. Check applicability: Verify the affected version, dependency usage, vulnerable code path, and whether the vulnerable functionality is reachable.
+3. Validate evidence: For SAST, inspect the code and data flow. For SCA, check the package version and dependency path. For DAST, examine the request, response, and reproducibility.
+4. Correlate results: Compare findings with vendor advisories, vulnerability databases, SBOM data, and other scan results where appropriate.
+5. Collaborate: Discuss uncertain findings with developers or application security analysts.
+6. Document the outcome: Record the evidence and follow the approved process to suppress or mark a finding as a false positive when justified.
+
+I don't suppress findings simply because they are inconvenient. Every suppression should have a technical justification and follow the organization's approval process.
+
+## Question 26: If automated scanning identifies hundreds of vulnerabilities in an application that previously had few findings in manual VAPT, how would you investigate the discrepancy and convince the application owner to address the findings?
+
+First, I would explain that automated scanning and manual VAPT have different coverage and objectives. A manual assessment may focus on selected attack scenarios, while automated tools can identify a large number of code-level, dependency, and container vulnerabilities.
+
+I would investigate the discrepancy as follows:
+
+- Verify the scan configuration, application scope, tool versions, and whether the findings are new.
+- Group vulnerabilities by application, severity, vulnerability type, and affected component.
+- Validate representative findings to identify false positives, duplicates, and vulnerabilities that are not applicable.
+- Correlate SCA findings with dependency trees and SBOM data, and inspect code or runtime evidence where required.
+- Prioritize actively exploited vulnerabilities, critical and high-risk issues, internet-exposed components, and vulnerabilities affecting sensitive functionality.
+- Share a clear remediation report with the application owner, including evidence, business impact, recommended fixes, and target dates.
+- Track remediation through closure and perform rescans to verify fixes.
+
+I would avoid presenting hundreds of findings as equally urgent. Instead, I would provide a risk-based remediation plan so the application team can address the most important issues first.
+
+## Question 27: When manual VAPT and automated scans produce different results, how do you validate the findings, inspect code and evidence, and involve developers and security analysts?
+
+I would first compare the scope, environment, authentication, scan configuration, and testing methodology used by both assessments.
+
+For example, an automated SAST scan might identify a potentially unsafe input flow in the source code, while manual VAPT might not reproduce an exploit in the tested environment. That does not automatically mean the finding is false.
+
+My approach would be:
+
+- For SAST, review the affected code, source-to-sink data flow, input validation, and sanitization.
+- For SCA, verify the dependency version, transitive dependency path, vulnerability advisory, and actual usage.
+- For DAST/VAPT, review the HTTP requests and responses, authentication context, reproduction steps, and potential impact.
+- Check whether environmental controls or compensating controls affect exploitability.
+- Discuss the technical evidence with developers and security analysts.
+- Document the final decision, remediation action, or justified exception.
+
+The goal is to establish the actual risk rather than automatically trusting or rejecting either assessment. Both automated scanning and manual VAPT provide complementary security coverage.
+
+## Question 28: What are important HTTP security headers, and how do Content Security Policy (CSP) and Cross-Origin Resource Sharing (CORS) help secure web applications?
+
+HTTP security headers help browsers enforce security policies and reduce common web application risks.
+
+Important headers include:
+
+- Content-Security-Policy (CSP): Restricts the sources from which scripts, styles, images, and other resources can load, helping mitigate cross-site scripting (XSS).
+- Strict-Transport-Security (HSTS): Instructs browsers to use HTTPS for future connections.
+- X-Content-Type-Options: With `nosniff`, helps prevent browsers from interpreting content as a different MIME type.
+- X-Frame-Options: Helps prevent clickjacking by restricting framing; CSP's `frame-ancestors` is the more flexible modern alternative.
+- Referrer-Policy: Controls how much referrer information the browser sends.
+- Permissions-Policy: Controls access to selected browser features.
+
+CSP vs. CORS:
+
+CSP controls which sources a browser is allowed to load resources from. CORS controls whether browser-based JavaScript from one origin can access resources from another origin.
+
+For example, CSP can restrict scripts to approved domains, while CORS can allow a frontend hosted at `https://app.example.com` to call an API hosted at `https://api.example.com`.
+
+Both should be configured according to the application's requirements. CORS is not an authentication or authorization mechanism, and allowing every origin is generally inappropriate for sensitive APIs.
+
+## Question 29: Who is responsible for SBOM generation and scanning in your project, and how do you generate, validate, publish, and maintain an SBOM?
+
+In my current project, SBOM and software composition analysis activities involve the DevSecOps team, application teams, and the relevant security-tool/platform teams, depending on the workflow.
+
+My role focuses on supporting the integration and operation of security tooling, reviewing scan results, and coordinating vulnerability remediation.
+
+The typical SBOM workflow is:
+
+1. Generate: Produce an SBOM from the application's dependencies or build artifacts using a supported tool. Common formats include SPDX and CycloneDX.
+2. Validate: Check that the SBOM is valid, contains component names and versions, and includes package identifiers such as PURLs where available.
+3. Scan: Use an SCA platform such as Sonatype Lifecycle to identify known vulnerabilities in the listed components.
+4. Review: Analyze CVEs, severity, dependency paths, and applicability; prioritize findings based on risk and exposure.
+5. Publish and store: Make the SBOM available in the approved repository or SBOM management platform, with appropriate access controls and version association.
+6. Maintain: Regenerate the SBOM when dependencies or build artifacts change, rescan for newly disclosed vulnerabilities, and track remediation.
+
+For regulated environments, I would also ensure the SBOM is traceable to the correct application, version, and release, and that required fields and retention practices follow the organization's compliance requirements.
 
 
 
