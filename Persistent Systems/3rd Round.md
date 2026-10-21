@@ -84,7 +84,7 @@
 
 
 ---
-# Consolidated Persistent Systems Interview Questions
+# Consolidated Interview Questions
 
 ## Revised question list
 
