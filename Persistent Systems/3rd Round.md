@@ -77,17 +77,6 @@
 
 # Questions: Combined follow-up questions into single question
 
-
----
-
-# Answers
-
-
----
-# Consolidated Interview Questions
-
-## Revised question list
-
 1. Can you introduce yourself and summarize your DevOps and DevSecOps experience?
 2. Can you explain your day-to-day responsibilities in your current role and the major security tools you manage?
 3. You mentioned shift-left security. What steps have you taken to integrate security early into the SDLC and CI/CD pipelines?
@@ -117,8 +106,8 @@
 27. When manual VAPT and automated scans produce different results, how do you validate the findings, inspect code and evidence, and involve developers and security analysts?
 28. What are important HTTP security headers, and how do Content Security Policy (CSP) and Cross-Origin Resource Sharing (CORS) help secure web applications?
 29. Who is responsible for SBOM generation and scanning in your project, and how do you generate, validate, publish, and maintain an SBOM?
-
-# Interview Answers
+---
+# Answers
 
 ## Question 1: Can you introduce yourself and summarize your DevOps and DevSecOps experience?
 
