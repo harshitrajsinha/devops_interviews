@@ -118,13 +118,9 @@
 28. What are important HTTP security headers, and how do Content Security Policy (CSP) and Cross-Origin Resource Sharing (CORS) help secure web applications?
 29. Who is responsible for SBOM generation and scanning in your project, and how do you generate, validate, publish, and maintain an SBOM?
 
-# Interview-Ready Answers: Questions 1–10
+# Interview Answers
 
-## Question 1
-
-Question:
-
-Can you introduce yourself and summarize your DevOps and DevSecOps experience?
+## Question 1: Can you introduce yourself and summarize your DevOps and DevSecOps experience?
 
 Answer:
 
@@ -140,11 +136,7 @@ I also support security-tool administration, vulnerability triage, remediation c
 
 My overall focus is to help development teams identify vulnerabilities early, remediate them efficiently, and deliver applications securely without unnecessarily disrupting releases.
 
-## Question 2
-
-Question:
-
-Can you explain your day-to-day responsibilities in your current role and the major security tools you manage?
+## Question 2: Can you explain your day-to-day responsibilities in your current role and the major security tools you manage?
 
 Answer:
 
@@ -163,11 +155,7 @@ My key activities include:
 
 I also participate in tool onboarding, troubleshooting, and security-process improvements. My primary focus is security engineering and vulnerability management, while I collaborate with DevOps teams on infrastructure and deployment-related activities.
 
-## Question 3
-
-Question:
-
-You mentioned shift-left security. What steps have you taken to integrate security early into the SDLC and CI/CD pipelines?
+## Question 3: You mentioned shift-left security. What steps have you taken to integrate security early into the SDLC and CI/CD pipelines?
 
 Answer:
 
@@ -193,11 +181,7 @@ Finally, we use scan reports and vulnerability trends to identify recurring issu
 
 The objective is to make security a continuous part of software delivery, reduce late-stage remediation costs, and maintain a balance between security requirements and release timelines.
 
-## Question 4
-
-Question:
-
-When a security scan identifies vulnerabilities, how do you validate, triage, report, and manage them through remediation?
+## Question 4: When a security scan identifies vulnerabilities, how do you validate, triage, report, and manage them through remediation?
 
 Answer:
 
@@ -219,11 +203,7 @@ Finally, I arrange or review a rescan to verify that the issue has been fixed. I
 
 This approach ensures that findings are not merely reported but are assigned, tracked, remediated, and verified.
 
-## Question 5
-
-Question:
-
-If security gates are not enabled, or a SAST scan reports hundreds of findings, how do you decide whether to block the pipeline or allow the release to proceed?
+## Question 5: If security gates are not enabled, or a SAST scan reports hundreds of findings, how do you decide whether to block the pipeline or allow the release to proceed?
 
 Answer:
 
@@ -243,11 +223,7 @@ In my project, I work with the development teams and relevant stakeholders to ap
 
 The objective is to prevent unacceptable security risks from progressing while ensuring that remediation decisions are consistent, traceable, and risk-based.
 
-## Question 6
-
-Question:
-
-How do you prioritize vulnerabilities using CVSS, exploitability, business impact, affected assets, and CISA Known Exploited Vulnerabilities (KEV)?
+## Question 6: How do you prioritize vulnerabilities using CVSS, exploitability, business impact, affected assets, and CISA Known Exploited Vulnerabilities (KEV)?
 
 Answer:
 
@@ -269,11 +245,7 @@ I use the organization's remediation SLAs and risk policies to assign deadlines,
 
 In short, CVSS helps assess technical severity, while exploitability, KEV status, exposure, and business impact help determine the actual remediation priority.
 
-## Question 7
-
-Question:
-
-How do you handle engineering teams that resist vulnerability remediation, dispute findings, or cannot fix vulnerabilities within the agreed timeline?
+## Question 7: How do you handle engineering teams that resist vulnerability remediation, dispute findings, or cannot fix vulnerabilities within the agreed timeline?
 
 Answer:
 
@@ -293,11 +265,7 @@ If remediation is genuinely not feasible before release, the team must obtain fo
 
 My approach is to help teams resolve issues rather than simply send reports or block releases. However, a team cannot unilaterally ignore a valid, high-risk vulnerability or bypass a mandatory security gate.
 
-## Question 8
-
-Question:
-
-How do you manage vulnerability exceptions, resolve ownership conflicts, enforce remediation SLAs, follow up with teams, and track outstanding vulnerabilities?
+## Question 8: How do you manage vulnerability exceptions, resolve ownership conflicts, enforce remediation SLAs, follow up with teams, and track outstanding vulnerabilities?
 
 Answer:
 
@@ -317,11 +285,7 @@ Once a team reports that a vulnerability has been fixed, I verify the result thr
 
 This process gives stakeholders visibility into the outstanding risk and helps ensure that remediation remains accountable and measurable.
 
-## Question 9
-
-Question:
-
-What is an SBOM, why is it important, and how is it used in vulnerability management and software supply-chain security?
+## Question 9: What is an SBOM, why is it important, and how is it used in vulnerability management and software supply-chain security?
 
 Answer:
 
@@ -344,11 +308,7 @@ The general workflow is to generate an SBOM from supported source, build, or art
 
 An SBOM should be tied to the specific application version or build it describes. It should also be updated and regenerated as dependencies change. An SBOM itself does not guarantee that software is secure; it provides the inventory needed to assess and manage component-related risks.
 
-## Question 10
-
-Question:
-
-What are the characteristics of a good or bad SBOM, and what best practices do you follow to maintain SBOM hygiene?
+## Question 10: What are the characteristics of a good or bad SBOM, and what best practices do you follow to maintain SBOM hygiene?
 
 Answer:
 
@@ -378,11 +338,7 @@ To maintain good SBOM hygiene, I would:
 8. Restrict access to sensitive build metadata and protect SBOM artifacts against unauthorized modification.
 
 
-## Question 11
-
-Question:
-
-What are Package URL (PURL) and Common Platform Enumeration (CPE), and how are they used to identify software components and vulnerabilities?
+## Question 11: What are Package URL (PURL) and Common Platform Enumeration (CPE), and how are they used to identify software components and vulnerabilities?
 
 Answer:
 
@@ -403,11 +359,7 @@ In vulnerability management, security tools use these identifiers to correlate s
 
 However, identifier matching alone is not sufficient. I would also verify the affected version range, dependency context, and applicable vulnerability advisory before concluding that a component is vulnerable.
 
-## Question 12
-
-Question:
-
-What is the difference between SAST, SCA, and DAST, and which tools do you use for each?
+## Question 12: What is the difference between SAST, SCA, and DAST, and which tools do you use for each?
 
 Answer:
 
@@ -421,11 +373,7 @@ We also use Trivy for container-image vulnerability scanning and Gitleaks for de
 
 These tools complement each other. SAST identifies potential weaknesses in our code, SCA identifies risks in third-party components, and DAST tests the application's behavior at runtime. Combining them provides broader coverage across the SDLC.
 
-## Question 13
-
-Question:
-
-At which stages of the SDLC do you perform SAST, SCA, and DAST, and what types of web application and API scans do you perform?
+## Question 13: At which stages of the SDLC do you perform SAST, SCA, and DAST, and what types of web application and API scans do you perform?
 
 Answer:
 
@@ -444,11 +392,7 @@ For APIs, the scanner should be configured with the correct API specification or
 
 In my project, I support Fortify WebInspect-based DAST for supported applications. The exact coverage depends on the application, scanner configuration, authentication setup, and approved testing scope.
 
-## Question 14
-
-Question:
-
-Given a CVE, how do you identify the affected application, vulnerable component, dependency path, and responsible engineering team?
+## Question 14: Given a CVE, how do you identify the affected application, vulnerable component, dependency path, and responsible engineering team?
 
 Answer:
 
@@ -468,11 +412,7 @@ Finally, I communicate the evidence, risk, recommended fix, and remediation dead
 
 For example, if a CVE affects a logging library, I would use the SBOM and SCA results to find which application versions contain the vulnerable library, confirm the affected version, identify the responsible team, and recommend upgrading to a vendor-supported fixed version.
 
-## Question 15
-
-Question:
-
-What is SQL injection, and how would you identify and remediate it?
+## Question 15: What is SQL injection, and how would you identify and remediate it?
 
 Answer:
 
@@ -495,11 +435,7 @@ For example, in a Java application, I would recommend using `PreparedStatement` 
 
 The primary remediation is to ensure that user input is treated as data, not executable SQL.
 
-## Question 16
-
-Question:
-
-What is the OWASP Top 10, and what significant changes were introduced in the latest edition?
+## Question 16: What is the OWASP Top 10, and what significant changes were introduced in the latest edition?
 
 Answer:
 
@@ -526,11 +462,7 @@ In my DevSecOps role, the OWASP Top 10 helps guide secure coding awareness, SAST
 
 I would not treat it as an exhaustive security checklist. It is a risk-awareness resource that should be combined with threat modeling, secure design, applicable security standards, and application-specific testing.
 
-## Question 17
-
-Question:
-
-What is CISA KEV, and how do you use it alongside CVSS during vulnerability prioritization?
+## Question 17: What is CISA KEV, and how do you use it alongside CVSS during vulnerability prioritization?
 
 Answer:
 
@@ -551,11 +483,7 @@ For example, if an application contains a library affected by a KEV-listed vulne
 
 KEV should not be treated as the only prioritization criterion. Vulnerabilities absent from KEV can still present significant risk, and the appropriate response depends on the complete risk context and the organization's policies.
 
-## Question 18
-
-Question:
-
-What are direct, recursive, and transitive dependencies? Can you explain transitive dependencies with an example?
+## Question 18: What are direct, recursive, and transitive dependencies? Can you explain transitive dependencies with an example?
 
 Answer:
 
@@ -579,11 +507,7 @@ I would use the dependency tree, lockfiles, SBOM, and SCA results to identify th
 
 After the change, I would rebuild the application, rerun SCA, and verify that the vulnerable version is no longer included in the resulting artifact.
 
-## Question 19
-
-Question:
-
-What hands-on CI/CD pipeline experience do you have, and how have you integrated security tools, policy enforcement, reporting, and quality gates?
+## Question 19: What hands-on CI/CD pipeline experience do you have, and how have you integrated security tools, policy enforcement, reporting, and quality gates?
 
 Answer:
 
@@ -610,11 +534,7 @@ For quality gates, I recommend using clearly defined policies rather than blocki
 
 The goal is to make security checks repeatable, visible, and consistent across application teams while minimizing unnecessary disruption to delivery.
 
-## Question 20
-
-Question:
-
-Are you familiar with the job description, and what questions would you ask to understand the role and its responsibilities?
+## Question 20: Are you familiar with the job description, and what questions would you ask to understand the role and its responsibilities?
 
 Answer:
 
