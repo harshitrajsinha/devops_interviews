@@ -12,3 +12,10 @@ A tag identifies a version in Git; a release presents that version to users with
 
 3. Terraform count vs for_each loop<br/>
 [Answer](https://app.notion.com/p/Terraform-2f431f57f13e8065984cf372a36f06a0?source=copy_link#3c631f57f13e808fa940d32dabffb7a8)
+
+4. Managing secrets in Terraform
+* Avoid hardcoding secrets in configuration file and scan the configuration files for any secret before committing it to remote repository like Git.
+* Use secret manager like AWS Secrets Manager or Hashicorp Vault to pass secret values at runtime.
+* For secrets at compile time that needs to be present while running terraform plan or apply command, we should pass the values through CLI using `-var` flags and mark the variables as sensitive so that its output is never displayed.
+* State files should be stored in remote backend as they contain secrets in plain text and the remote backend should be secured with least-privilege policies.
+* Finally, the secrets used should be timely rotated.
