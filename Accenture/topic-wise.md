@@ -10,3 +10,5 @@ Git Tags: Mark a specific commit in Git history. Git Releases: Package a version
 A tag identifies a version in Git; a release presents that version to users with documentation and distribution details.
 ```
 
+3. Terraform count vs for_each loop<br/>
+[Answer](https://app.notion.com/p/Terraform-2f431f57f13e8065984cf372a36f06a0?source=copy_link#3c631f57f13e808fa940d32dabffb7a8)
