@@ -126,9 +126,9 @@ Answer:
 
 Thank you for the opportunity. My name is NAME, and I have over four years of experience across DevOps and DevSecOps.
 
-I started my career at TCS as a DevOps Engineer, where I worked on Jenkins-based CI/CD pipelines, build and deployment automation, Docker, Kubernetes, Terraform, Ansible, and cloud infrastructure.
+I started my career at PREVIOUS COMPANY as a DevOps Engineer, where I worked on Jenkins-based CI/CD pipelines, build and deployment automation, Docker, Kubernetes, Terraform, Ansible, and cloud infrastructure.
 
-Currently, I work at Talakunchi Networks, deployed to In-Solutions Global, a fintech company that provides payment gateway solutions to banking clients.
+Currently, I work at CURRENT COMPANY, deployed to CLIENT COPMANY, a fintech company that provides payment gateway solutions to banking clients.
 
 My primary responsibility is managing and integrating the DevSecOps security stack into application delivery pipelines. I work with tools such as Fortify for SAST and DAST, Sonatype Lifecycle for SCA, SBOM tooling, Gitleaks for secret detection, and Trivy for container-image scanning.
 
