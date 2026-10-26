@@ -1,7 +1,4 @@
-# Interview Questions
-
-### Infosys F2F Interview — Complete Question List
-
+## Infosys F2F Interview
 1. Can you introduce yourself?
 
 2. Tell me about your strengths and weaknesses. Not necessarily technical.
@@ -18,6 +15,12 @@
 
 ---
 
+Questions i asked the interviewer:
+1. Is the role client-facing or an in-house role?
+2. Is the project related to the fintech domain?
+3. Could the notice period be a blocker?
+4. What learning and cross-skilling opportunities are available?
+5. If you develop expertise in another technology, could you get opportunities to work in that area?
 
 # Answers
 
