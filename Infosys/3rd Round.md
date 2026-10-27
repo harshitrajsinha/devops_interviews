@@ -34,7 +34,8 @@
 
 17\. Do you have any questions for us?
 
-18\. Is this a client-facing role? (This was your question to HR, not a question HR asked you. HR said the specific information could not be disclosed at that stage.)
+18\. Is this a client-facing role? (This was my question to HR)
+After that HR said the specific information could not be disclosed at that stage.
 
 ## Information provided by HR (not questions)
 
